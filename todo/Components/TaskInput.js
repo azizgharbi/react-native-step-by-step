@@ -29,12 +29,13 @@ export default TaskInput = ({ tasks, setTask }) => {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    display: "flex",
-    margin: 40,
+    flexDirection: "column",
+    justifyContent: "center",
+    margin: 30,
   },
   input: {
     marginBottom: 4,
-    height: 70,
+    marginRight: 4,
     borderColor: "#f9c2ff",
     borderWidth: 5,
     padding: 10,
