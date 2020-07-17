@@ -3,7 +3,7 @@ import { RefreshControl, ScrollView } from "react-native";
 
 import { styles } from "./styles";
 
-import UselessTextInput from "./Components/UselessTextInput";
+import TaskInput from "./Components/TaskInput";
 import TasksList from "./Components/TasksList";
 
 const wait = (timeout) => {
@@ -32,7 +32,7 @@ const App = () => {
       }
       style={styles.container}
     >
-      <UselessTextInput tasks={tasks} setTask={setTask}></UselessTextInput>
+      <TaskInput tasks={tasks} setTask={setTask}></TaskInput>
       <TasksList items={tasks}></TasksList>
     </ScrollView>
   );
