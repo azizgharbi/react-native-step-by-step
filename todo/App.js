@@ -14,7 +14,7 @@ const wait = (timeout) => {
 
 const App = () => {
   const [tasks, setTask] = useState([]);
-  const [refreshing, setRefreshing] = React.useState(false);
+  const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = useCallback(() => {
     setRefreshing(true);
