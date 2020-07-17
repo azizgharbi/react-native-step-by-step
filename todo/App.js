@@ -1,7 +1,10 @@
 import React, { useState, useCallback } from "react";
-import { RefreshControl, ScrollView } from "react-native";
-
-import { styles } from "./styles";
+import {
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  StatusBar,
+} from "react-native";
 
 import TaskInput from "./Components/TaskInput";
 import TasksList from "./Components/TasksList";
@@ -37,5 +40,12 @@ const App = () => {
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
+  },
+});
 
 export default App;

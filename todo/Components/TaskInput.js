@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaView, TextInput, Button } from "react-native";
-import { styles } from "../styles";
+import { SafeAreaView, TextInput, Button, StyleSheet } from "react-native";
 
 export default TaskInput = ({ tasks, setTask }) => {
   const [value, onChangeText] = useState("");
@@ -27,3 +26,17 @@ export default TaskInput = ({ tasks, setTask }) => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  inputContainer: {
+    display: "flex",
+    margin: 40,
+  },
+  input: {
+    marginBottom: 4,
+    height: 70,
+    borderColor: "#f9c2ff",
+    borderWidth: 5,
+    padding: 10,
+  },
+});

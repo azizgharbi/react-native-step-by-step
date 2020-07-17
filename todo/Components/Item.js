@@ -1,9 +1,20 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { styles } from "../styles";
+import { View, Text, StyleSheet } from "react-native";
 
 export default Item = ({ title }) => (
   <View style={styles.item}>
     <Text style={styles.title}>{title}</Text>
   </View>
 );
+
+const styles = StyleSheet.create({
+  item: {
+    backgroundColor: "#f9c2ff",
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
+  },
+});
