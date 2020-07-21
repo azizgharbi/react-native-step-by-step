@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default Item = ({ title }) => {
+export default Item = ({ title, id, deleteTask }) => {
   const pan = useRef(new Animated.ValueXY()).current;
 
   const panResponder = PanResponder.create({
@@ -16,33 +16,26 @@ export default Item = ({ title }) => {
     onPanResponderMove: Animated.event([
       null,
       {
-        dx: pan.x, // x,y are Animated.Value
+        dx: pan.x,
         dy: 0,
       },
     ]),
     onPanResponderRelease: () => {
-      Animated.spring(
-        pan, // Auto-multiplexed
-        { toValue: { x: -60, y: 0 } } // Back to zero
-      ).start();
+      Animated.spring(pan, { toValue: { x: -60, y: 0 } }).start();
     },
   });
-
-  function resetPosition() {
-    pan.setValue(0);
-  }
 
   return (
     <View style={styles.backgroundItem}>
       <Animated.View {...panResponder.panHandlers} style={[pan.getLayout()]}>
-        <View style={styles.item} onPress={resetPosition}>
+        <View style={styles.item}>
           <Text style={styles.title}>{title}</Text>
         </View>
       </Animated.View>
       <TouchableOpacity
         style={styles.delete}
         onPress={() => {
-          console.log("does not work");
+          deleteTask(id);
         }}
       >
         <Text style={styles.deleteText}>Delete</Text>

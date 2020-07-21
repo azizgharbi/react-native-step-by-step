@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { SafeAreaView, TextInput, Button, StyleSheet } from "react-native";
 
-export default TaskInput = ({ tasks, setTask }) => {
+export default TaskInput = ({ tasks, setTasks }) => {
   const [value, onChangeText] = useState("");
 
   function addTask() {
-    setTask([
+    setTasks([
       ...tasks,
       {
-        id: new Date(),
+        id: `${new Date()}-${Math.random()}`,
         title: value,
       },
     ]);

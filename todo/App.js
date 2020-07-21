@@ -16,7 +16,7 @@ const wait = (timeout) => {
 };
 
 const App = () => {
-  const [tasks, setTask] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = useCallback(() => {
@@ -24,7 +24,7 @@ const App = () => {
 
     wait(2000).then(() => {
       setRefreshing(false);
-      setTask([]);
+      setTasks([]);
     });
   }, []);
 
@@ -35,8 +35,8 @@ const App = () => {
       }
       style={styles.container}
     >
-      <TaskInput tasks={tasks} setTask={setTask}></TaskInput>
-      <TasksList items={tasks}></TasksList>
+      <TaskInput tasks={tasks} setTasks={setTasks}></TaskInput>
+      <TasksList tasks={tasks} setTasks={setTasks}></TasksList>
     </ScrollView>
   );
 };
